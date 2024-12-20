@@ -325,7 +325,7 @@ const HomePageScript = (canvasRef) => {
 
         gsap
         .timeline()
-        // First half of rotation (bottom to top, +z)
+        // First half of rotation (bottom to top, +z) L'animation du début quoi
         .to(sphere.position, {
             duration: revolutionDuration / 2,
             y: revolutionRadius,
@@ -338,7 +338,7 @@ const HomePageScript = (canvasRef) => {
             },
             delay: delay
         })
-        // Second half of rotation (top to bottom, -z)
+        // Second half of rotation (top to bottom, -z) La fin de l'animation du début quoi
         .to(sphere.position, {
             duration: revolutionDuration / 2,
             y: initY / 5,
@@ -507,6 +507,7 @@ const HomePageScript = (canvasRef) => {
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
     });
+    gui.destroy();
 };
 
 export default HomePageScript;

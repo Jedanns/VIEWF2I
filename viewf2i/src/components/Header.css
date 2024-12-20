@@ -1,0 +1,89 @@
+/* Header Styles */
+.header-component .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.header-component .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-component .navbar-brand {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: var(--black-color);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.header-component nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+.header-component nav ul li {
+    list-style: none;
+}
+
+.header-component nav ul a {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--black-color);
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.header-component nav ul a:hover {
+    color: #007bff;
+}
+
+.header-component nav ul a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: width 0.3s ease;
+}
+
+.header-component nav ul a:hover::after {
+    width: 100%;
+}
+
+.header-component .ham-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.header-component .ham-btn i {
+    font-size: 24px;
+    color: var(--black-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-component nav ul {
+        display: none;
+    }
+
+    .header-component .ham-btn {
+        display: block;
+    }
+}

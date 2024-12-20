@@ -1,0 +1,126 @@
+/* General Styles */
+.bookstore body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.bookstore .bookstore-container {
+  display: flex;
+  padding: 20px;
+  margin-top: 40px; 
+}
+
+/* Sidebar Filter Menu */
+.bookstore .filter-menu {
+  flex: 1;
+  max-width: 250px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bookstore .filter-menu h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+}
+
+.bookstore .filter-menu label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.bookstore .filter-menu select, .bookstore .filter-menu input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.bookstore .filter-menu button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.bookstore .filter-menu button:hover {
+  background-color: #0056b3;
+}
+
+/* Book List */
+.bookstore .book-list {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.bookstore .book-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.bookstore .book-item:hover {
+  transform: translateY(-5px);
+}
+
+.bookstore .book-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.bookstore .book-item h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--black-color);
+}
+
+.bookstore .book-item h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  margin: 10px 0;
+}
+
+.bookstore .book-item p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #555;
+}
+
+.bookstore .book-item button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.bookstore .book-item button:hover {
+  background-color: #218838;
+}
