@@ -1,124 +1,70 @@
-# ViewF2I : Visionneuse de Livres
+# Getting Started with Create React App
 
-## Aperçu du Projet
-ViewF2I est une application basée sur React conçue pour parcourir une collection de livres stockés dans un fichier local `db.json`. L'application appelle l'API hébergée dans votre dépôt [Jedanns/APIF2I](https://github.com/Jedanns/APIF2I) et offre une interface visuellement attrayante stylisée avec `three.js` et d'autres bibliothèques modernes.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Fonctionnalités
-- **Frontend React** : Une interface utilisateur simple et intuitive construite avec React.
-- **Intégration API** : Récupère les données des livres à partir d'une API locale alimentée par `json-server`.
-- **Style 3D** : Utilise `three.js` pour ajouter des éléments visuellement interactifs.
-- **Routage** : Utilise `react-router-dom` pour la navigation entre les pages.
-- **Intégration FontAwesome** : Pour une iconographie améliorée.
+## Available Scripts
 
----
+In the project directory, you can run:
 
-## Installation
+### `npm start`
 
-### Prérequis
-Assurez-vous d'avoir les éléments suivants installés sur votre système :
-- [Node.js](https://nodejs.org/) (version 16 ou supérieure recommandée)
-- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Étapes
-1. Clonez ce dépôt :
-    ```bash
-    git clone https://github.com/Jedanns/APIF2I.git
-    cd APIF2I
-    ```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-2. Installez les dépendances :
-    ```bash
-    npm install
-    ```
+### `npm test`
 
-3. Démarrez le serveur API local :
-    ```bash
-    npm start
-    ```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-4. Dans un terminal séparé, naviguez vers le dossier `viewf2i` et installez ses dépendances :
-    ```bash
-    cd viewf2i
-    npm install
-    ```
+### `npm run build`
 
-5. Démarrez l'application React :
-    ```bash
-    npm start
-    ```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-6. Ouvrez votre navigateur et accédez à `http://localhost:3000`.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
----
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Technologies Utilisées
+### `npm run eject`
 
-### Frontend
-- **React** : Une bibliothèque JavaScript pour construire des interfaces utilisateur.
-- **React Router** : Pour la navigation entre différentes vues/pages.
-- **FontAwesome** : Pour des icônes modernes et réactives.
-- **GSAP** : Pour les animations.
-- **three.js** : Pour les graphiques et animations 3D.
-- **dat.GUI** : Pour des contrôles d'interface utilisateur personnalisables.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### Backend
-- **json-server** : Pour simuler une API REST avec le fichier `db.json`.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
----
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## Structure des Fichiers
-```
-viewf2i/
-|-- public/
-|-- src/
-     |-- components/
-     |-- pages/
-     |-- App.js
-     |-- index.js
-|-- package.json
-|-- README.md
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- `components/` : Composants React réutilisables.
-- `pages/` : Pages individuelles telles que Accueil, Détails du Livre, etc.
-- `App.js` : Composant principal de l'application.
-- `index.js` : Point d'entrée pour l'application React.
+## Learn More
 
----
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Scripts
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Démarrer le Serveur de Développement
-```bash
-npm start
-```
-Lance l'application en mode développement.
+### Code Splitting
 
-### Construire pour la Production
-```bash
-npm run build
-```
-Construit l'application pour la production dans le dossier `build`.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Exécuter les Tests
-```bash
-npm test
-```
-Lance le test runner en mode interactif.
+### Analyzing the Bundle Size
 
----
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## Contribuer
-Si vous souhaitez contribuer à ce projet :
-1. Forkez le dépôt.
-2. Créez une nouvelle branche (`git checkout -b feature-name`).
-3. Commitez vos modifications (`git commit -m 'Ajoutez une fonctionnalité'`).
-4. Poussez vers la branche (`git push origin feature-name`).
-5. Ouvrez une pull request.
+### Making a Progressive Web App
 
----
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-## Licence
-Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus d'informations.
+### Advanced Configuration
 
----
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
