@@ -7,7 +7,7 @@ const BookStore = () => {
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [genres, setGenres] = useState([]);
   const [authors, setAuthors] = useState([]);
-  const [filters, setFilters] = useState({ genre: '', author: '', minPrice: '', maxPrice: '' });
+  const [filters, setFilters] = useState({ genre: '', author: '' });
 
   useEffect(() => {
     fetchBooks();
@@ -16,20 +16,29 @@ const BookStore = () => {
   const fetchBooks = async () => {
     try {
       const response = await fetch('http://localhost:4000/api/library');
-      const data = await response.json();
-      setBooks(data);
-      setFilteredBooks(data);
-
-      // Extract unique genres and authors for filtering
-      const genres = [...new Set(data.map(book => book.genre))];
-      const authors = [...new Set(data.map(book => book.author))];
-
-      setGenres(genres);
-      setAuthors(authors);
+      const result = await response.json(); // The API response object
+      console.log('Fetched result:', result);
+  
+      // Check if the data key exists and is an array
+      if (result?.data && Array.isArray(result.data)) {
+        const books = result.data; // Extract books array from result.data
+        setBooks(books);
+        setFilteredBooks(books);
+  
+        // Extract unique genres and authors for filtering
+        const genres = [...new Set(books.map(book => book.genre))];
+        const authors = [...new Set(books.map(book => book.author))];
+  
+        setGenres(genres);
+        setAuthors(authors);
+      } else {
+        console.error('Unexpected API response structure:', result);
+      }
     } catch (error) {
       console.error('Error fetching books:', error);
     }
   };
+  
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
@@ -45,14 +54,6 @@ const BookStore = () => {
 
     if (filters.author) {
       filtered = filtered.filter(book => book.author === filters.author);
-    }
-
-    if (filters.minPrice) {
-      filtered = filtered.filter(book => book.price >= parseFloat(filters.minPrice));
-    }
-
-    if (filters.maxPrice) {
-      filtered = filtered.filter(book => book.price <= parseFloat(filters.maxPrice));
     }
 
     setFilteredBooks(filtered);
@@ -85,27 +86,18 @@ const BookStore = () => {
               </select>
             </div>
 
-            <div>
-              <label htmlFor="minPrice">Min Price</label>
-              <input type="number" name="minPrice" onChange={handleFilterChange} />
-            </div>
-
-            <div>
-              <label htmlFor="maxPrice">Max Price</label>
-              <input type="number" name="maxPrice" onChange={handleFilterChange} />
-            </div>
-
             <button onClick={applyFilters}>Apply Filters</button>
           </aside>
 
           <main className="book-list">
             {filteredBooks.map(book => (
               <div key={book.id} className="book-item">
-                <img src={book.coverImage} alt={book.title} />
+                {/* If cover images are available in your API, include them here */}
+                <div className="book-cover-placeholder">No Image</div>
                 <h4>{book.title}</h4>
                 <p>{book.author}</p>
-                <p>{book.price} Ks</p>
-                <button>Add to cart</button>
+                <p><em>{book.genre}</em></p>
+                <p>{book.description}</p>
               </div>
             ))}
           </main>
